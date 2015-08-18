@@ -1,0 +1,50 @@
+{
+  "name": "generator-redux-app",
+  "version": "0.1.0",
+  "description": "Scaffold out a redux app",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "test-travis": "node node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "plugin",
+    "boilerplate",
+    "template",
+    "scaffold",
+    "redux",
+    "react",
+    "react-router"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentsulin/generator-redux-app.git"
+  },
+  "author": {
+    "name": "C. T. Lin",
+    "email": "chentsulin@gmail.com",
+    "url": "https://github.com/chentsulin"
+  },
+  "bugs": {
+    "url": "https://github.com/chentsulin/generator-redux-app/issues"
+  },
+  "homepage": "https://github.com/chentsulin/generator-redux-app#readme",
+  "devDependencies": {
+    "eslint": "^0.24.1",
+    "eslint-config-airbnb": "0.0.7",
+    "eslint-plugin-react": "^3.2.2",
+    "istanbul": "^0.3.17",
+    "mocha": "*"
+  },
+  "dependencies": {
+    "humanize-url": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "normalize-url": "^1.2.1",
+    "underscore.string": "^3.0.3",
+    "yeoman-generator": "^0.20.1"
+  }
+}
