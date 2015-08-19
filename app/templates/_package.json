@@ -13,7 +13,7 @@
     "test:watch": "npm test -- --watch",
     "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive",
     "check": "npm run lint && npm run test <% if (flow) { %> && flow check <% } %>",
-    "build": " ",
+    "build": "webpack src/index.js --config webpack.config.production.js",
     "preversion": "npm run clean && npm run check",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
