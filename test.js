@@ -55,8 +55,7 @@ describe('generator', function() {
       path.join('test', 'actions', 'counter.spec.js'),
       path.join('test', 'components', 'Counter.spec.js'),
       path.join('test', 'containers', 'CounterPage.spec.js'),
-      path.join('test', 'reducers', 'counter.spec.js'),
-      path.join('test', 'jsdomReact.js')
+      path.join('test', 'reducers', 'counter.spec.js')
 		];
 
     helpers.mockPrompt(this.generator, {
