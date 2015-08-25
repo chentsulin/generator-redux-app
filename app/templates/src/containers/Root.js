@@ -12,7 +12,7 @@ const store = configureStore();
 function createElements(history) {
   const elements = [
     <Provider store={store} key="provider">
-      {() => <Router history={history} children={routes} /> }
+      <Router history={history} children={routes} />
     </Provider>
   ];
 

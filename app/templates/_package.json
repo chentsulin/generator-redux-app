@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "clean": "rimraf lib dist coverage",
-    "lint": "eslint src test examples",
+    "lint": "eslint src test",
     "test": "mocha --compilers js:babel/register --recursive",
     "test:watch": "npm test -- --watch",
     "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive",
@@ -45,7 +45,7 @@
     "mocha": "*",
     "mocha-jsdom": "^1.0.0",
     "proxyquire": "^1.6.0",
-    "react-hot-loader": "^1.2.8",
+    "react-hot-loader": "^1.2.9",
     "redux-devtools": "^1.0.2",
     "rimraf": "^2.4.2",
     "sinon": "^1.15.4",
@@ -53,12 +53,13 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
-    "radium": "^0.13.7",
-    "react": "^0.13.3",
-    "react-redux": "^0.8.2",
+    "radium": "^0.13.8",
+    "react": "^0.14.0-beta3",
+    "react-dom": "^0.14.0-beta3",
+    "react-redux": "^1.0.0",
     "react-router": "^1.0.0-beta3",
     "redux": "^1.0.1",
-    "redux-logger": "0.0.3",
+    "redux-logger": "^1.0.6",
     "redux-promise": "^0.5.0",
     "redux-thunk": "^0.1.0"
   }

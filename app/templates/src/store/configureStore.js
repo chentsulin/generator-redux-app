@@ -2,8 +2,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise';
-import loggerMiddleware from 'redux-logger';
+import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
+
+
+const loggerMiddleware = createLogger({
+  level: 'info',
+  collapsed: true
+});
 
 
 let createStoreWithMiddleware;

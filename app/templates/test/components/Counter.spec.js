@@ -1,7 +1,7 @@
 /* eslint no-unused-expressions: 0 */
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import jsdomReact from '../jsdomReact';
+import jsdom from 'mocha-jsdom';
 import React from 'react/addons';
 import Counter from '../../src/components/Counter';
 
@@ -29,7 +29,7 @@ function setup() {
 
 
 describe('Counter component', () => {
-  jsdomReact();
+  jsdom();
 
   it('should display count', () => {
     const { p } = setup();

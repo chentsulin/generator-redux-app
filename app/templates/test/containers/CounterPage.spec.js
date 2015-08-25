@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import jsdomReact from '../jsdomReact';
+import jsdom from 'mocha-jsdom';
 import React from 'react/addons';
 import { Provider } from 'react-redux';
 import CounterPage from '../../src/containers/CounterPage';
@@ -27,7 +27,7 @@ function setup(initialState) {
 
 
 describe('containers', () => {
-  jsdomReact();
+  jsdom();
 
   describe('App', () => {
 
