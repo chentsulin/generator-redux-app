@@ -2,11 +2,9 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import jsdom from 'mocha-jsdom';
-import React from 'react/addons';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import Counter from '../../src/components/Counter';
-
-
-const { TestUtils } = React.addons;
 
 
 function setup() {
@@ -21,9 +19,9 @@ function setup() {
     component: component,
     actions: actions,
     buttons: TestUtils.scryRenderedDOMComponentsWithTag(component, 'button').map(button => {
-      return button.getDOMNode();
+      return button;
     }),
-    p: TestUtils.findRenderedDOMComponentWithTag(component, 'p').getDOMNode()
+    p: TestUtils.findRenderedDOMComponentWithTag(component, 'p')
   };
 }
 

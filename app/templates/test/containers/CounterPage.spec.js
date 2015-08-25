@@ -1,27 +1,25 @@
 import { expect } from 'chai';
 import jsdom from 'mocha-jsdom';
-import React from 'react/addons';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import { Provider } from 'react-redux';
 import CounterPage from '../../src/containers/CounterPage';
 import configureStore from '../../src/store/configureStore';
-
-
-const { TestUtils } = React.addons;
 
 
 function setup(initialState) {
   const store = configureStore(initialState);
   const app = TestUtils.renderIntoDocument(
     <Provider store={store}>
-      {() => <CounterPage />}
+      <CounterPage />
     </Provider>
   );
   return {
     app: app,
     buttons: TestUtils.scryRenderedDOMComponentsWithTag(app, 'button').map(button => {
-      return button.getDOMNode();
+      return button;
     }),
-    p: TestUtils.findRenderedDOMComponentWithTag(app, 'p').getDOMNode()
+    p: TestUtils.findRenderedDOMComponentWithTag(app, 'p')
   };
 }
 
