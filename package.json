@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/chentsulin/generator-redux-app#readme",
   "devDependencies": {
+    "babel-eslint": "^4.1.0",
     "eslint": "^0.24.1",
     "eslint-config-airbnb": "0.0.7",
     "eslint-plugin-react": "^3.2.2",
