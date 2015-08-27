@@ -39,6 +39,7 @@ describe('generator', function() {
       'index.html',
       'server.js',
       'webpack.config.js',
+      'webpack.config.production.js',
       path.join('src', 'actions', 'counter.js'),
       path.join('src', 'components', 'Counter.js'),
       path.join('src', 'components', 'Main.js'),
