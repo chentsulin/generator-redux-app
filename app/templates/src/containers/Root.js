@@ -1,7 +1,7 @@
 /* global __DEVTOOLS__ */
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { Router, PropTypes as RouterPropTypes } from 'react-router';
 import configureStore from '../store/configureStore';
 import routes from '../routes';
 
@@ -9,36 +9,23 @@ import routes from '../routes';
 const store = configureStore();
 
 
-function createElements(history) {
-  const elements = [
-    <Provider store={store} key="provider">
-      <Router history={history} children={routes} />
-    </Provider>
-  ];
-
-  if (typeof __DEVTOOLS__ !== 'undefined' && __DEVTOOLS__) {
-    const { DevTools, DebugPanel, LogMonitor } = require('redux-devtools/lib/react');
-    elements.push(
-      <DebugPanel top right bottom key="debugPanel">
-        <DevTools store={store} monitor={LogMonitor}/>
-      </DebugPanel>
-    );
-  }
-  return elements;
+if (typeof __DEVTOOLS__ !== 'undefined' && __DEVTOOLS__) {
+  const createDevToolsWindow = require('../utils/createDevToolsWindow');
+  createDevToolsWindow(store);
 }
 
 
 export default class Root extends Component {
 
   static propTypes = {
-    history: PropTypes.object.isRequired
+    history: RouterPropTypes.history.isRequired
   };
 
   render() {
     return (
-      <div>
-        {createElements(this.props.history)}
-      </div>
+      <Provider store={store} key="provider">
+        <Router history={this.props.history} children={routes} />
+      </Provider>
     );
   }
 }

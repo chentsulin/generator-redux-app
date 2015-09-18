@@ -50,7 +50,7 @@ describe('generator', function() {
       path.join('src', 'reducers', 'counter.js'),
       path.join('src', 'reducers', 'index.js'),
       path.join('src', 'store', 'configureStore.js'),
-      path.join('src', 'utils', '.gitkeep'),
+      path.join('src', 'utils', 'createDevToolsWindow.js'),
       path.join('src', 'index.js'),
       path.join('src', 'routes.js'),
       path.join('test', 'actions', 'counter.spec.js'),
