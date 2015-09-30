@@ -1,9 +1,10 @@
 sudo: false
 language: node_js
 node_js:
-  - '0.12'
-  - 'iojs-v1'
-  - 'iojs-v2'
-  - 'iojs-v3'
+  - "0.12"
+  - "1"
+  - "2"
+  - "3"
+  - "4"
 script: "npm run test:cov"
 after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
