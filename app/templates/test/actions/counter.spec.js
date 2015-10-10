@@ -5,7 +5,6 @@ import * as actions from '../../src/actions/counter';
 
 
 describe('actions', () => {
-
   it('increment should create increment action', () => {
     expect(actions.increment()).to.deep.equal({ type: actions.INCREMENT_COUNTER });
   });

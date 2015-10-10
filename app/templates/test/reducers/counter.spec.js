@@ -5,7 +5,6 @@ import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../../src/actions/counter'
 
 describe('reducers', () => {
   describe('counter', () => {
-
     it('should handle initial state', () => {
       expect(counter(undefined, {})).to.equal(0);
     });
