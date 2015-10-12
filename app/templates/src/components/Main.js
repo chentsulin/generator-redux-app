@@ -11,7 +11,7 @@ export default class Main extends Component {
     return (
       <div>
           {/* this will render the child routes */}
-          {React.cloneElement(this.props.children, this.props)}
+          {this.props.children}
       </div>
     );
   }
