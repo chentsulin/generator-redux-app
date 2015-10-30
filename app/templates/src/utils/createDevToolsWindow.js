@@ -17,6 +17,15 @@ export default function createDevToolsWindow(store) {
     'menubar=no,location=no,resizable=yes,scrollbars=no,status=no'
   );
 
+  // Pop-ups are blocked by default, so it may open async
+  if (!win) {
+    console.warn(
+      'Couldn\'t open the dev Tools, probably the popup window ' +
+      'was blocked, please enable the popup window for the current page.\n'
+    );
+    return;
+  }
+
   // Reload in case it's reusing the same window with the old content.
   win.location.reload();
 
