@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import jsdom from 'mocha-jsdom';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { Provider } from 'react-redux';
@@ -25,8 +24,6 @@ function setup(initialState) {
 
 
 describe('containers', () => {
-  jsdom();
-
   describe('App', () => {
     it('should display initial count', () => {
       const { p } = setup();

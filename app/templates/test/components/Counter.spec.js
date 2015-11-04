@@ -1,7 +1,6 @@
 /* eslint no-unused-expressions: 0 */
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import jsdom from 'mocha-jsdom';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import Counter from '../../src/components/Counter';
@@ -27,8 +26,6 @@ function setup() {
 
 
 describe('Counter component', () => {
-  jsdom();
-
   it('should display count', () => {
     const { p } = setup();
     expect(p.textContent).to.match(/^Clicked: 1 times/);
