@@ -14,7 +14,9 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       '__DEVTOOLS__': false,
-      'process.env': JSON.stringify('production')
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
