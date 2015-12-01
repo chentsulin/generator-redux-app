@@ -16,6 +16,11 @@ export default function createDevToolsWindow(store) {
     name,
     'menubar=no,location=no,resizable=yes,scrollbars=no,status=no'
   );
+  
+  // Pop-ups are blocked by default, so it may open async
+  if(!win){
+    console.log('Pop-ups are blocked for this window. Allow popups and try again');
+  }
 
   // Pop-ups are blocked by default, so it may open async
   if (!win) {
