@@ -1,6 +1,7 @@
+/* eslint no-console:0 */
 import React from 'react';
 import { render } from 'react-dom';
-import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
+import DevTools from '../containers/DevTools';
 
 /**
  * Puts Redux DevTools into a separate window.
@@ -34,9 +35,7 @@ export default function createDevToolsWindow(store) {
 
   // Wait a little bit for it to reload, then render.
   setTimeout(() => render(
-    <DebugPanel top right bottom left>
-      <DevTools store={store} monitor={LogMonitor} />
-    </DebugPanel>,
+    <DevTools store={store} />,
     win.document.body.appendChild(document.createElement('div'))
   ), 10);
 }
