@@ -9,7 +9,6 @@ const store = configureStore();
 
 
 export default class Root extends Component {
-
   static propTypes = {
     history: RouterPropTypes.history.isRequired
   };
