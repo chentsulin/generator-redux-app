@@ -26,16 +26,17 @@ describe('generator', function() {
 
   it('generates expected files', function(cb) {
     var expected = [
-			'.editorconfig',
-			'.gitattributes',
-			'.gitignore',
-			'.eslintrc',
-			'.travis.yml',
+      '.editorconfig',
+      '.gitattributes',
+      '.gitignore',
+      '.eslintrc',
+      '.travis.yml',
+      '.istanbul.yml',
       '.babelrc',
-			'CHANGELOG.md',
-			'LICENSE',
-			'package.json',
-			'README.md',
+      'CHANGELOG.md',
+      'LICENSE',
+      'package.json',
+      'README.md',
       'index.html',
       'server.js',
       'webpack.config.js',
@@ -57,14 +58,14 @@ describe('generator', function() {
       path.join('test', 'components', 'Counter.spec.js'),
       path.join('test', 'containers', 'CounterPage.spec.js'),
       path.join('test', 'reducers', 'counter.spec.js')
-		];
+    ];
 
     helpers.mockPrompt(this.generator, {
-			moduleName: 'test',
-			githubUsername: 'test',
-			website: 'test.com',
-			flow: false
-		});
+      moduleName: 'test',
+      githubUsername: 'test',
+      website: 'test.com',
+      flow: false
+    });
 
     this.generator.run(function() {
       assert.file(expected);
@@ -74,11 +75,11 @@ describe('generator', function() {
 
   it('flow option', function(cb) {
     helpers.mockPrompt(this.generator, {
-			moduleName: 'test',
-			githubUsername: 'test',
-			website: 'test.com',
-			flow: true
-		});
+      moduleName: 'test',
+      githubUsername: 'test',
+      website: 'test.com',
+      flow: true
+    });
 
     this.generator.run(function() {
       assert.file('.flowconfig');

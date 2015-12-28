@@ -59,6 +59,7 @@ module.exports = yeoman.generators.Base.extend({
       this.template('gitignore', '.gitignore');
       this.template('eslintrc', '.eslintrc');
       this.template('travis.yml', '.travis.yml');
+      this.template('istanbul.yml', '.istanbul.yml');
       this.template('index.html');
       this.template('server.js');
       this.template('webpack.config.js');
