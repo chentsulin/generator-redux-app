@@ -11,6 +11,12 @@ $ npm install
 $ npm start
 ```
 
+You can change server port using following command.
+
+```sh
+$ PORT=5000 npm start
+```
+
 ## Testing
 
 ```sh
