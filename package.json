@@ -1,6 +1,6 @@
 {
   "name": "generator-redux-app",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "Scaffold out a redux app",
   "license": "MIT",
   "scripts": {
