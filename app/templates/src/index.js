@@ -1,13 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Root from './containers/Root';
-import { createHistory } from 'history';
-
-
-const history = createHistory();
+import { browserHistory } from 'react-router';
 
 
 render(
-  <Root history={history} />,
+  <Root history={browserHistory} />,
   document.getElementById('root')
 );

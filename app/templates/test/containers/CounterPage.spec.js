@@ -4,7 +4,7 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag,
   findRenderedDOMComponentWithTag,
-  Simulate
+  Simulate,
 } from 'react-addons-test-utils';
 import { Provider } from 'react-redux';
 import CounterPage from '../../src/containers/CounterPage';
@@ -20,16 +20,14 @@ function setup(initialState) {
   );
   return {
     app,
-    buttons: scryRenderedDOMComponentsWithTag(app, 'button').map(button => {
-      return button;
-    }),
+    buttons: scryRenderedDOMComponentsWithTag(app, 'button').map(button => button),
     p: findRenderedDOMComponentWithTag(app, 'p')
   };
 }
 
 
 describe('containers', () => {
-  describe('App', () => {
+  describe('CounterPage', () => {
     it('should display initial count', () => {
       const { p } = setup();
       expect(p.textContent).to.match(/^Clicked: 0 times/);
