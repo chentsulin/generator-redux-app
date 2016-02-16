@@ -46,6 +46,8 @@ describe('generator', function() {
       path.join('src', 'components', 'Main.js'),
       path.join('src', 'containers', 'App.js'),
       path.join('src', 'containers', 'CounterPage.js'),
+      path.join('src', 'containers', 'AnotherPage.js'),
+      path.join('src', 'containers', 'NotFoundPage.js'),
       path.join('src', 'containers', 'index.js'),
       path.join('src', 'containers', 'Root.js'),
       path.join('src', 'reducers', 'counter.js'),
