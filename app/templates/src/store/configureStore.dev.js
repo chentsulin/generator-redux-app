@@ -9,7 +9,7 @@ import DevTools from '../containers/DevTools';
 
 const loggerMiddleware = createLogger({
   level: 'info',
-  collapsed: true
+  collapsed: true,
 });
 
 
