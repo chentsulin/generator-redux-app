@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import { persistState } from 'redux-devtools';
 import rootReducer from '../reducers';
@@ -20,7 +19,7 @@ export default function configureStore(initialState) {
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(thunk, promise, logger),
+      applyMiddleware(thunk, logger),
       DevTools.instrument(),
       persistState(
         window.location.href.match(
