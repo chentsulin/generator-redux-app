@@ -3,8 +3,6 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import { persistState } from 'redux-devtools';
-import { browserHistory } from 'react-router';
-import { syncHistory } from 'react-router-redux';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
 
@@ -14,9 +12,6 @@ const logger = createLogger({
   collapsed: true,
 });
 
-// Sync dispatched route actions to the history
-const router = syncHistory(browserHistory);
-
 /**
  * Creates a preconfigured store.
  */
@@ -25,7 +20,7 @@ export default function configureStore(initialState) {
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(thunk, promise, router, logger),
+      applyMiddleware(thunk, promise, logger),
       DevTools.instrument(),
       persistState(
         window.location.href.match(
@@ -34,8 +29,6 @@ export default function configureStore(initialState) {
       )
     )
   );
-
-  router.listenForReplays(store);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
