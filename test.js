@@ -30,6 +30,7 @@ describe('generator', function() {
       '.gitattributes',
       '.gitignore',
       '.eslintrc',
+      '.eslintignore',
       '.travis.yml',
       '.istanbul.yml',
       '.babelrc',
