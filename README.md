@@ -24,7 +24,7 @@ $ npm install -g yo
 ## Usage
 
 ```sh
-$ yo redux-app
+$  mkdir your-app-name && cd your-app-name && yo redux-app
 ```
 
 ## License
