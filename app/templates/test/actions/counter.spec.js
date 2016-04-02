@@ -19,7 +19,7 @@ describe('actions', () => {
     const dispatch = spy();
     const getState = () => ({ counter: 1 });
     fn(dispatch, getState);
-    expect(dispatch.calledWith({ type: actions.INCREMENT_COUNTER })).to.be.true;
+    expect(dispatch).to.have.been.calledWith({ type: actions.INCREMENT_COUNTER });
   });
 
   it('incrementIfOdd shouldnt create increment action if counter is even', () => {
@@ -27,7 +27,7 @@ describe('actions', () => {
     const dispatch = spy();
     const getState = () => ({ counter: 2 });
     fn(dispatch, getState);
-    expect(dispatch.called).to.be.false;
+    expect(dispatch).to.have.not.been.called;
   });
 
   // There's no nice way to test this at the moment...
@@ -37,7 +37,7 @@ describe('actions', () => {
     const dispatch = spy();
     fn(dispatch);
     setTimeout(() => {
-      expect(dispatch.calledWith({ type: actions.INCREMENT_COUNTER })).to.be.true;
+      expect(dispatch).to.have.been.calledWith({ type: actions.INCREMENT_COUNTER });
       done();
     }, 5);
   });
