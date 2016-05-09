@@ -2,8 +2,8 @@
 
 var path = require('path');
 var yeoman = require('yeoman-generator');
-var helpers = yeoman.test;
-var assert = yeoman.assert;
+var helpers = require('yeoman-test');
+var assert = require('yeoman-assert');
 var pwd = path.resolve('./');
 
 
@@ -32,7 +32,6 @@ describe('generator', function() {
       '.eslintrc',
       '.eslintignore',
       '.travis.yml',
-      '.istanbul.yml',
       '.babelrc',
       'CHANGELOG.md',
       'LICENSE',
