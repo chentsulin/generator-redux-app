@@ -8,7 +8,7 @@ var mkdirp = require('mkdirp');
 var _s = require('underscore.string');
 
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
 	init: function() {
     var cb = this.async();
 
@@ -60,7 +60,6 @@ module.exports = yeoman.generators.Base.extend({
       this.template('eslintrc', '.eslintrc');
       this.template('eslintignore', '.eslintignore');
       this.template('travis.yml', '.travis.yml');
-      this.template('istanbul.yml', '.istanbul.yml');
       this.template('index.html');
       this.template('server.js');
       this.template('webpack.config.js');
