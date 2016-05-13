@@ -15,7 +15,7 @@ Using [chentsulin/redux-boilerplate](https://github.com/chentsulin/redux-boilerp
 $ npm install -g generator-redux-app
 ```
 
-> Note: `generator-redux-app` as a [yeoman](http://yeoman.io/) generator, so you must have global `yo` installed, too.
+> Note: `generator-redux-app` is a [yeoman](http://yeoman.io/) generator, so you must have global `yo` installed, too.
 
 ```sh
 $ npm install -g yo
