@@ -27,6 +27,12 @@ $ npm install -g yo
 $  mkdir your-app-name && cd your-app-name && yo redux-app
 ```
 
+## Troubleshooting
+
+#### TypeError: this.env.adapter.prompt(...).then is not a function
+
+Please upgrade your global `yo` npm module using `npm install -g yo`.
+
 ## License
 
 MIT © [C.T. Lin](https://github.com/chentsulin)
