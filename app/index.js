@@ -1,3 +1,4 @@
+/* eslint quote-props: 0, no-underscore-dangle: 0 */
 'use strict';
 
 const normalizeUrl = require('normalize-url');
