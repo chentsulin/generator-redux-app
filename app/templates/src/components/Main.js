@@ -1,17 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 
-export default class Main extends Component {
-  static propTypes = {
-    children: PropTypes.any.isRequired,
-  };
+const Main = ({ children }) => (
+  <div>
+    {/* this will render the child routes */}
+    {children}
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-          {/* this will render the child routes */}
-          {this.props.children}
-      </div>
-    );
-  }
-}
+Main.propTypes = {
+  children: PropTypes.any.isRequired,
+};
+
+
+export default Main;

@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class AnotherPage extends Component {
-  render() {
-    return (
-      <div>
-        <h1>AnotherPage</h1>
-      </div>
-    );
-  }
-}
+const AnotherPage = () => (
+  <div>
+    <h1>AnotherPage</h1>
+  </div>
+);
 
 
 export default AnotherPage;
