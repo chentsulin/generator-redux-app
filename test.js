@@ -28,7 +28,7 @@ describe('generator', () => {
       '.editorconfig',
       '.gitattributes',
       '.gitignore',
-      '.eslintrc',
+      '.eslintrc.json',
       '.eslintignore',
       '.travis.yml',
       '.babelrc',
