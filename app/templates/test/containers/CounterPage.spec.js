@@ -6,7 +6,7 @@ import CounterPage from '../../src/containers/CounterPage';
 import configureStore from '../../src/store/configureStore';
 
 
-function setup(initialState) {
+const setup = (initialState) => {
   const store = configureStore(initialState);
   const app = mount(
     <Provider store={store}>
@@ -18,7 +18,7 @@ function setup(initialState) {
     buttons: app.find('button'),
     p: app.find('p'),
   };
-}
+};
 
 
 describe('containers', () => {

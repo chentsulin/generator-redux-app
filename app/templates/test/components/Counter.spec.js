@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import Counter from '../../src/components/Counter';
 
 
-function setup() {
+const setup = () => {
   const actions = {
     increment: spy(),
     incrementIfOdd: spy(),
@@ -22,7 +22,7 @@ function setup() {
     buttons: component.find('button'),
     p: component.find('p'),
   };
-}
+};
 
 
 describe('Counter component', () => {
