@@ -10,10 +10,12 @@ const router = routerMiddleware(browserHistory);
 /**
  * Creates a preconfigured store.
  */
-export default function configureStore(initialState) {
-  return createStore(
+const configureStore = (initialState) =>
+  createStore(
     rootReducer,
     initialState,
     applyMiddleware(thunk, router)
   );
-}
+
+
+export default configureStore;
