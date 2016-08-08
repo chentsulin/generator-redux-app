@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import createReducer from '../../src/utils/createReducer';
+import createReducer from '../createReducer';
 
 
 const INIT_ACTION = '@@test/INIT_ACTION';

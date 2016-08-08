@@ -74,7 +74,7 @@ module.exports = yeoman.Base.extend({
       }
 
       this.directory('src', 'src');
-      this.directory('test', 'test');
+      this.directory('scripts', 'scripts');
 
       cb();
     });
