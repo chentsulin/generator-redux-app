@@ -2,8 +2,8 @@ import { expect } from 'chai';
 import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
-import CounterPage from '../../src/containers/CounterPage';
-import configureStore from '../../src/store/configureStore';
+import CounterPage from '../CounterPage';
+import configureStore from '../../store/configureStore';
 
 
 const setup = (initialState) => {
