@@ -7,9 +7,11 @@
     "mocha": true
   },
   "rules": {
-
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": [2, { "extensions": [".js"] }]
   },
   "plugins": [
+    "import",
     "react"
   ]
 }
