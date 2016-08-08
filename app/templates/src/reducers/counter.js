@@ -3,9 +3,9 @@ import createReducer from '../utils/createReducer';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
 
-const initialState = 0;
+const preloadedState = 0;
 
-const counter = createReducer(initialState, {
+const counter = createReducer(preloadedState, {
   [INCREMENT_COUNTER]: (state, action) => state + 1,
 
   [DECREMENT_COUNTER]: (state, action) => state - 1,
