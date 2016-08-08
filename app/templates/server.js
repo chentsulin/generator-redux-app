@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+/* eslint-disable no-console */
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');

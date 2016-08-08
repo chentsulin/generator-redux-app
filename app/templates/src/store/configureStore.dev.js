@@ -1,4 +1,4 @@
-/* eslint global-require: 0 */
+/* eslint-disable global-require */
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -38,6 +38,7 @@ const configureStore = (preloadedState) => {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
       const nextRootReducer = require('../reducers/index').default;
+
       store.replaceReducer(nextRootReducer);
     });
   }
