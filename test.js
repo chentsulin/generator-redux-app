@@ -58,7 +58,8 @@ describe('generator', () => {
       path.join('src', 'store', 'configureStore.js'),
       path.join('src', 'utils', 'createDevToolsWindow.js'),
       path.join('src', 'index.js'),
-      path.join('src', 'routes.js'),
+      path.join('src', 'createRoutes.js'),
+      path.join('src', '__tests__', 'createRoutes.spec.js'),
       path.join('scripts', 'mocha-setup.js'),
     ];
 
