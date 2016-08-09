@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import React from 'react';
@@ -34,24 +33,24 @@ describe('Counter component', () => {
   it('first button should call increment', () => {
     const { buttons, actions } = setup();
     buttons.at(0).simulate('click');
-    expect(actions.increment).to.have.been.called;
+    expect(actions.increment).to.have.been.called();
   });
 
   it('second button should call decrement', () => {
     const { buttons, actions } = setup();
     buttons.at(1).simulate('click');
-    expect(actions.decrement).to.have.been.called;
+    expect(actions.decrement).to.have.been.called();
   });
 
   it('third button should call incrementIfOdd', () => {
     const { buttons, actions } = setup();
     buttons.at(2).simulate('click');
-    expect(actions.incrementIfOdd).to.have.been.called;
+    expect(actions.incrementIfOdd).to.have.been.called();
   });
 
   it('fourth button should call incrementAsync', () => {
     const { buttons, actions } = setup();
     buttons.at(3).simulate('click');
-    expect(actions.incrementAsync).to.have.been.called;
+    expect(actions.incrementAsync).to.have.been.called();
   });
 });

@@ -18,6 +18,6 @@ if (process.env.NODE_ENV === 'development') {
 
 
 render(
- <Root store={store} history={history} />,
+  <Root store={store} history={history} />,
   document.getElementById('root')
 );

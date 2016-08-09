@@ -15,13 +15,17 @@ describe('utils', () => {
       it('should return initial state when be called first time', () => {
         const initialState = 1;
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
-        expect(reducer(undefined, { type: INIT_ACTION })).to.equal(initialState);
+        expect(reducer(undefined, { type: INIT_ACTION }))
+          .to.equal(initialState);
       });
 
       it('should return next state when receive action', () => {
         const initialState = 1;
         const nextState = 2;
-        const reducer = createReducer(initialState, createNextStateHandler(nextState));
+        const reducer = createReducer(
+          initialState,
+          createNextStateHandler(nextState)
+        );
         const prevState = reducer(undefined, { type: INIT_ACTION });
         expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
       });
@@ -33,7 +37,8 @@ describe('utils', () => {
           key: 1,
         };
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
-        expect(reducer(undefined, { type: INIT_ACTION })).to.equal(initialState);
+        expect(reducer(undefined, { type: INIT_ACTION }))
+          .to.equal(initialState);
       });
 
       it('should return next state when receive action', () => {
@@ -43,7 +48,10 @@ describe('utils', () => {
         const nextState = {
           key: 2,
         };
-        const reducer = createReducer(initialState, createNextStateHandler(nextState));
+        const reducer = createReducer(
+          initialState,
+          createNextStateHandler(nextState)
+        );
         const prevState = reducer(undefined, { type: INIT_ACTION });
         expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
       });
@@ -53,13 +61,17 @@ describe('utils', () => {
       it('should return initial state when be called first time', () => {
         const initialState = [1, 2, 3, 4];
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
-        expect(reducer(undefined, { type: INIT_ACTION })).to.equal(initialState);
+        expect(reducer(undefined, { type: INIT_ACTION }))
+          .to.equal(initialState);
       });
 
       it('should return next state when receive action', () => {
         const initialState = [1, 2, 3, 4];
         const nextState = [5, 6, 7, 8];
-        const reducer = createReducer(initialState, createNextStateHandler(nextState));
+        const reducer = createReducer(
+          initialState,
+          createNextStateHandler(nextState)
+        );
         const prevState = reducer(undefined, { type: INIT_ACTION });
         expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
       });
