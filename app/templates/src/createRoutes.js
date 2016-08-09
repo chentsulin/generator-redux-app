@@ -10,11 +10,16 @@ const {
   NotFoundPage,
 } = containers;
 
-
-export default (
+/**
+ *  /
+ *  /another
+ **/
+const createRoutes = (store) => ( // eslint-disable-line no-unused-vars
   <Route component={App}>
     <Route path="/" component={CounterPage} />
     <Route path="/another" component={AnotherPage} />
     <Route path="*" component={NotFoundPage} />
   </Route>
 );
+
+export default createRoutes;
