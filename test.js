@@ -3,8 +3,8 @@
 const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
-const pwd = path.resolve('./');
 
+const pwd = path.resolve('./');
 
 describe('generator', () => {
   let generator;
