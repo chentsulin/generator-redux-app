@@ -60,8 +60,9 @@ module.exports = yeoman.Base.extend({
       this.template('travis.yml', '.travis.yml');
       this.template('index.html');
       this.template('server.js');
-      this.template('webpack.config.js');
-      this.template('webpack.config.production.js');
+      this.template('webpack.config.dev.js');
+      this.template('webpack.config.prod.js');
+      this.template('webpack.config.test.js');
       this.template('LICENSE');
       this.template('CHANGELOG.md');
       // needed so npm doesn't try to use it and fail
