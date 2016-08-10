@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "clean": "rimraf lib dist coverage",
-    "lint": "eslint src test",
+    "lint": "eslint src scripts *.js",
     "testonly": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require ./scripts/mocha-setup.js src/**/__tests__/**/*.spec.js",
     "testonly:watch": "npm run testonly -- --watch",
     "test": "npm run lint && npm run testonly",
