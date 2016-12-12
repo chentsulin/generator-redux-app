@@ -1,7 +1,7 @@
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Router, createMemoryHistory, useRouterHistory } from 'react-router';
+
 import createRoutes from '../createRoutes';
 import * as containers from '../containers';
 
@@ -18,7 +18,7 @@ const createStubStore = () => ({
   },
 });
 
-const renderRoute = (path) => {
+const renderRoute = path => {
   const history = useRouterHistory(createMemoryHistory)({ queryKey: false });
   history.push(path);
   const store = createStubStore();
@@ -30,7 +30,7 @@ const renderRoute = (path) => {
 
 const expectIncludeComponents = (components, expectedComponents) => {
   expectedComponents.forEach(comp => {
-    expect(components).to.include(comp);
+    expect(components).toContain(comp);
   });
 };
 
@@ -56,3 +56,4 @@ describe('routes', () => {
     });
   });
 });
+

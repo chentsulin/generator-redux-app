@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const simpleVars = require('postcss-simple-vars');
 const nested = require('postcss-nested');
@@ -10,6 +11,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
+    'react-hot-loader/patch',
     './src/index',
   ],
   output: {
@@ -23,6 +25,10 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true,
     }),
   ],
   module: {

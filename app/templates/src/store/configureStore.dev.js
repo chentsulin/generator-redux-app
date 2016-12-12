@@ -1,12 +1,12 @@
 /* eslint-disable global-require */
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
-import { persistState } from 'redux-devtools';
+import { composeWithDevTools } from 'remote-redux-devtools';
+
 import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
 
 
 const logger = createLogger({
@@ -19,18 +19,12 @@ const router = routerMiddleware(browserHistory);
 /**
  * Creates a preconfigured store.
  */
-const configureStore = (preloadedState) => {
+const configureStore = preloadedState => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    compose(
+    composeWithDevTools(
       applyMiddleware(thunk, router, logger),
-      DevTools.instrument(),
-      persistState(
-        window.location.href.match(
-          /[?&]debug_session=([^&]+)\b/
-        )
-      )
     )
   );
 

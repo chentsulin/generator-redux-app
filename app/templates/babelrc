@@ -1,5 +1,5 @@
 {
-  "presets": ["react", "es2015", "stage-0"],
+  "presets": ["latest", "react", "stage-2"],
   "env": {
     "production": {
       "presets": ["react-optimize"],
@@ -8,18 +8,7 @@
       ]
     },
     "development": {
-      "presets": ["react-hmre"]
-    },
-    "test": {
-      "plugins": [
-        [
-          "webpack-loaders",
-          {
-            "config": "./webpack.config.test.js",
-            "verbose": false
-          }
-        ]
-      ]
+      "plugins": ["react-hot-loader/babel"]
     }
   }
 }

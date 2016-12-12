@@ -4,20 +4,19 @@
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "jest": true
   },
   "rules": {
-    "max-len": [2, 79, {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": "off",
+    "max-len": ["error", 79, {
       "ignorePattern": " // eslint-disable-line "
     }],
-    "no-underscore-dangle": 0,
-    "import/no-extraneous-dependencies": 0,
-    "react/jsx-filename-extension": [2, {
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": ["error", {
       "extensions": [".js"]
     }]
-  },
-  "plugins": [
-    "import",
-    "react"
-  ]
+  }
 }
