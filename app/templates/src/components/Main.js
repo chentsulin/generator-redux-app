@@ -9,7 +9,7 @@ const Main = ({ children }) => (
 );
 
 Main.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 

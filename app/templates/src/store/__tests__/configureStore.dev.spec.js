@@ -1,11 +1,10 @@
-import { expect } from 'chai';
 import configureStore from '../configureStore.dev';
 
 describe('configureStore.dev', () => {
   it('returns a store which conform redux store contract', () => {
     const store = configureStore();
     ['dispatch', 'subscribe', 'getState', 'replaceReducer'].forEach(method => {
-      expect(store[method]).to.be.a('function');
+      expect(store[method]).toBeInstanceOf(Function);
     });
   });
 
@@ -13,7 +12,7 @@ describe('configureStore.dev', () => {
     const store = configureStore();
     expect(() => store.dispatch(
       () => ({ type: 'UNKNOWN' }))
-    ).to.not.throw();
+    ).not.toThrow();
   });
 
   it('can assign preloadedState', () => {
@@ -21,6 +20,6 @@ describe('configureStore.dev', () => {
       counter: 1,
     };
     const store = configureStore(preloadedState);
-    expect(store.getState().counter).to.equal(1);
+    expect(store.getState().counter).toBe(1);
   });
 });

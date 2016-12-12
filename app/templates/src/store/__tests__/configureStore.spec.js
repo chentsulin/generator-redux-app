@@ -1,29 +1,29 @@
-import { expect } from 'chai';
-import requireUncached from 'require-uncached';
-import developmentConfigureStore from '../configureStore.dev';
-import productionConfigureStore from '../configureStore.prod';
-
+/* eslint-disable global-require */
 describe('configureStore', () => {
   const _ENV = process.env.NODE_ENV;
   afterEach(() => {
     process.env.NODE_ENV = _ENV;
+    jest.resetModules();
   });
 
   it('should use dev configureStore when NODE_ENV=development', () => {
     process.env.NODE_ENV = 'development';
-    const configureStore = requireUncached('../configureStore').default;
-    expect(configureStore).to.equal(developmentConfigureStore);
+    const developmentConfigureStore = require('../configureStore.dev').default;
+    const configureStore = require('../configureStore').default;
+    expect(configureStore).toBe(developmentConfigureStore);
   });
 
   it('should use prod configureStore when NODE_ENV=production', () => {
     process.env.NODE_ENV = 'production';
-    const configureStore = requireUncached('../configureStore').default;
-    expect(configureStore).to.equal(productionConfigureStore);
+    const productionConfigureStore = require('../configureStore.prod').default;
+    const configureStore = require('../configureStore').default;
+    expect(configureStore).toBe(productionConfigureStore);
   });
 
   it('should use prod configureStore when NODE_ENV=test', () => {
     process.env.NODE_ENV = 'test';
-    const configureStore = requireUncached('../configureStore').default;
-    expect(configureStore).to.equal(productionConfigureStore);
+    const productionConfigureStore = require('../configureStore.prod').default;
+    const configureStore = require('../configureStore').default;
+    expect(configureStore).toBe(productionConfigureStore);
   });
 });

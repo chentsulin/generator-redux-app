@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const simpleVars = require('postcss-simple-vars');
@@ -11,7 +12,7 @@ module.exports = {
   entry: './src/index',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle-[chunkhash].js',
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -26,7 +27,11 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new ExtractTextPlugin('style-[contenthash].css', { allChunks: true }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true,
+    }),
   ],
   module: {
     loaders: [

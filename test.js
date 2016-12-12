@@ -26,7 +26,6 @@ describe('generator', () => {
   it('generates expected files', (done) => {
     const expected = [
       '.editorconfig',
-      '.gitattributes',
       '.gitignore',
       '.eslintrc.json',
       '.eslintignore',
@@ -36,11 +35,9 @@ describe('generator', () => {
       'LICENSE',
       'package.json',
       'README.md',
-      'index.html',
       'server.js',
       'webpack.config.dev.js',
       'webpack.config.prod.js',
-      'webpack.config.test.js',
       path.join('src', 'actions', 'counter.js'),
       path.join('src', 'actions', '__tests__', 'counter.spec.js'),
       path.join('src', 'components', 'Counter.js'),
@@ -63,11 +60,14 @@ describe('generator', () => {
       path.join('src', 'store', '__tests__', 'configureStore.dev.spec.js'),
       path.join('src', 'store', 'configureStore.prod.js'),
       path.join('src', 'store', '__tests__', 'configureStore.prod.spec.js'),
-      path.join('src', 'utils', 'createDevToolsWindow.js'),
+      path.join('src', 'utils', 'createReducer.js'),
+      path.join('src', 'utils', '__tests__', 'createReducer.spec.js'),
       path.join('src', 'index.js'),
+      path.join('src', 'index.css'),
+      path.join('src', 'index.html'),
       path.join('src', 'createRoutes.js'),
       path.join('src', '__tests__', 'createRoutes.spec.js'),
-      path.join('scripts', 'mocha-setup.js'),
+      path.join('__mocks__', 'styleMock.js'),
     ];
 
     helpers.mockPrompt(generator, {

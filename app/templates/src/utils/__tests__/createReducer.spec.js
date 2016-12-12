@@ -1,11 +1,10 @@
-import { expect } from 'chai';
 import createReducer from '../createReducer';
 
 
 const INIT_ACTION = '@@test/INIT_ACTION';
 const ACTION = 'ACTION';
 
-const createNextStateHandler = (nextState) => ({
+const createNextStateHandler = nextState => ({
   [ACTION]: () => nextState,
 });
 
@@ -16,7 +15,7 @@ describe('utils', () => {
         const initialState = 1;
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
         expect(reducer(undefined, { type: INIT_ACTION }))
-          .to.equal(initialState);
+          .toBe(initialState);
       });
 
       it('should return next state when receive action', () => {
@@ -27,7 +26,7 @@ describe('utils', () => {
           createNextStateHandler(nextState)
         );
         const prevState = reducer(undefined, { type: INIT_ACTION });
-        expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
+        expect(reducer(prevState, { type: ACTION })).toBe(nextState);
       });
     });
 
@@ -38,7 +37,7 @@ describe('utils', () => {
         };
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
         expect(reducer(undefined, { type: INIT_ACTION }))
-          .to.equal(initialState);
+          .toBe(initialState);
       });
 
       it('should return next state when receive action', () => {
@@ -53,7 +52,7 @@ describe('utils', () => {
           createNextStateHandler(nextState)
         );
         const prevState = reducer(undefined, { type: INIT_ACTION });
-        expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
+        expect(reducer(prevState, { type: ACTION })).toBe(nextState);
       });
     });
 
@@ -62,7 +61,7 @@ describe('utils', () => {
         const initialState = [1, 2, 3, 4];
         const reducer = createReducer(initialState, { [ACTION]: () => {} });
         expect(reducer(undefined, { type: INIT_ACTION }))
-          .to.equal(initialState);
+          .toBe(initialState);
       });
 
       it('should return next state when receive action', () => {
@@ -73,7 +72,7 @@ describe('utils', () => {
           createNextStateHandler(nextState)
         );
         const prevState = reducer(undefined, { type: INIT_ACTION });
-        expect(reducer(prevState, { type: ACTION })).to.equal(nextState);
+        expect(reducer(prevState, { type: ACTION })).toBe(nextState);
       });
     });
   });

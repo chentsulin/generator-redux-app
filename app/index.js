@@ -53,16 +53,13 @@ module.exports = yeoman.Base.extend({
 
 
       this.template('editorconfig', '.editorconfig');
-      this.template('gitattributes', '.gitattributes');
       this.template('gitignore', '.gitignore');
       this.template('eslintrc.json', '.eslintrc.json');
       this.template('eslintignore', '.eslintignore');
       this.template('travis.yml', '.travis.yml');
-      this.template('index.html');
       this.template('server.js');
       this.template('webpack.config.dev.js');
       this.template('webpack.config.prod.js');
-      this.template('webpack.config.test.js');
       this.template('LICENSE');
       this.template('CHANGELOG.md');
       // needed so npm doesn't try to use it and fail
@@ -75,7 +72,7 @@ module.exports = yeoman.Base.extend({
       }
 
       this.directory('src', 'src');
-      this.directory('scripts', 'scripts');
+      this.directory('__mocks__', '__mocks__');
 
       cb();
     });
